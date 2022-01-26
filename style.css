@@ -1,0 +1,43 @@
+#search, #games_container {
+  background: #491864;
+  height: max-content;
+  color: #fff;
+  font-weight: bold;
+  padding: 1em;
+  font-size: 1em;
+  margin: 10px;
+}
+body {
+  background: #440337;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+#search_input {
+  padding: .5em;
+  background: #f4f4f233;
+  border: 2px dashed #fff;
+  font-size: 1.3em;
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+}
+#english_word {
+  background: #8080804d;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+  cursor: pointer;
+}
+.found_word {
+  font-size: 1.5em;
+  margin: 5px;
+  display: block;
+}
+.fav_bt {
+  color: gray;
+  font-size: 3em;
+  display: block;
+}

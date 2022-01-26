@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" width="device-width" initial-scale="1.0">
+        <title>Memorizer App</title>
+        <link href="style.css" rel="stylesheet">
+        <script src="index.js" defer></script>
+        <link rel="manifest" href="manifest.webmanifest">
+    </head>
+    <body>
+	<section id="search">
+		<h2> Search for meanings </h2>
+		<input id="search_input" type="text" placeholder="type to search" onkeyup="finder(event)"/> 
+		<div id="english_word"></div>
+		<div id="german_word"></di>
+	</section>
+        <section id="games_container">
+		<h2> Write the correct translation </h2>
+            <div id="question"></div>
+            <div id="solution">
+		<input type="text" id="answer" placeholder="type german translation" onkeyup="checker()"/>
+            </div>
+	    <div id="result"> </div>
+		<button onclick="checker()"> Check answer </button>
+        </section>
+</body>
+</html>

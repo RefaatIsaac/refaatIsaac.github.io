@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "German English dictionary and vocabulary Trainer",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "App icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Memorizer",
+  "short_name": "Memorizer",
+  "start_url": "index.html"
+}
