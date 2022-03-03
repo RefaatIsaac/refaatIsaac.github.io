@@ -9,6 +9,7 @@
       "type": "image/png"
     }
   ],
+  "display": "standalone",
   "name": "Memorizer",
   "short_name": "Memorizer",
   "start_url": "refaatisaac.github.io/index.html"
