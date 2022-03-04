@@ -283,9 +283,9 @@ for (const word in commonFromEngToDE) {
     foundWord += `
     <div class="top_area">
     <i class="word_type common">Common 2000 words:</i>
-    <i class="flag usa">&#127482;&#127480;</i>
+    <i class="flag germany">&#127465;&#127466;</i>
     </div>`;
-    foundWord += `<i class="mic" onclick="read(this)">&#128266;</i><span class="found_word en found">${commonFromEngToDE[word]}</span>`;
+    foundWord += `<i class="mic" onclick="read(this)">&#128266;</i><span class="found_word de found">${commonFromEngToDE[word]}</span>`;
     foundWord += `</div>`;
   }  
 }
