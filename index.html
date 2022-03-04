@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memorizer App</title>
    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
 </head>
@@ -153,8 +155,15 @@
     <footer>
     <div>dictionary and word trainer</div>
     </footer>
+<button id="goFS"> Fullscreen <\button>
   </sction>
   <div id="data_list"></div>
+<script>
+var goFS = document.getElementById("goFS");
+  goFS.addEventListener("click", function() {
+      document.body.requestFullscreen();
+  }, false);
+</script>
   <script src="index.js"></script>
 </body>
 </html>
