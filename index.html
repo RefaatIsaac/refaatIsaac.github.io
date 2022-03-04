@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width initial-scale=1.0">
   <title>Memorizer App</title>
-  <link rel="stylesheet" href="all.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,14 +27,14 @@
     <h1>Memorizer</h1>
     <nav id="nav_panel">
     <div class="menu_item"></div>
-    <div class='dictionary active_bar menu_item fa fa-language' id="show_dic"  onclick="displaySec(event)">  Dictionary</div>
+    <div class='dictionary active_bar menu_item' id="show_dic"  onclick="displaySec(event)">&#128215;  Dictionary</div>
     <div class="favorites menu_item" id="show_fav" onclick="displaySec(event)"> &#9733; Favorites</div>
-    <div class="exercises menu_item fa fa-microscope" id="show_exercise" onclick="displaySec(event)">  Exercises</div>
+    <div class="exercises menu_item" id="show_exercise" onclick="displaySec(event)"> &#127947; Exercises</div>
     <div class='menu_item'></div>
     <div id="floating_menu">
-      <div class='dictionary active_bar menu_item floating fa fa-language' aria-hidden="true" onclick="displaySec(event)"></div>
+      <div class='dictionary active_bar menu_item floating' aria-hidden="true" onclick="displaySec(event)">&#128215;</div>
       <div class="favorites menu_item floating" onclick="displaySec(event)">&#9733;</div>
-      <div class="exercises menu_item floating fa fa-microscope" onclick="displaySec(event)"></div>
+      <div class="exercises menu_item floating" onclick="displaySec(event)">&#127947;</div>
     </div>
     </nav>
     </header>
