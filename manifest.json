@@ -4,7 +4,7 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "Logo.png",
+      "src": "transparent logo.png",
       "sizes": "3750x3750",
       "type": "image/png"
     }
