@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <title>Memorizer App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loading_cont">
+    <div id="loading">Memorizer</div>
+    <div id="points_cont">
+      <i class="loading_point" id="point_1">.</i>
+      <i class="loading_point" id="point_2">.</i>
+      <i class="loading_point" id="point_3">.</i>
+      <i class="loading_point" id="point_4">.</i>
+      <i class="loading_point" id="point_5">.</i>
+      <i class="loading_point" id="point_6">.</i>
+      <i class="loading_point" id="point_7">.</i>
+      <i class="loading_point" id="point_8">.</i>
+      <i class="loading_point" id="point_9">.</i>
+      <i class="loading_point" id="point_10">.</i>
+    </div>
+  </div>
+  <section id="super" style="display: none;">
+    <header>
+    <h1>Memorizer</h1>
+    <nav id="nav_panel">
+    <div class='menu_item' id="show_dic">
+      <div class="dictionary upper" onclick="displaySec(event)"></div>
+      <span class="navIcon activeIcon"><i class="fa fa-language">&#128214;</i></span>Dictionary
+    </div>
+    <div class="menu_item" id="show_fav">
+      <div class="favorites upper" onclick="displaySec(event)"></div>
+      <span class="navIcon"><i class=""></i>&#9733;</span>Favorites
+    </div>
+    <div class="menu_item" id="show_exercise">
+      <div class="exercises upper" onclick="displaySec(event)"></div>
+      <span class="navIcon"><i class="fa fa-microscope"></i>&#127947;</span>Exercises
+    </div>
+    <!-- <div id="floating_menu">
+      <div class='dictionary active_bar menu_item floating fa fa-language' aria-hidden="true" onclick="displaySec(event)"></div>
+      <div class="favorites menu_item floating" onclick="displaySec(event)">&#9733;</div>
+      <div class="exercises menu_item floating fa fa-microscope" onclick="displaySec(event)"></div>
+    </div> -->
+    </nav>
+    </header>
+    <main id="container">
+      <section id="dictionary_sec" class="active_sec">
+        <h2> Search for meanings </h2>
+        <input id="search_input" type="text" placeholder="type to search" onkeyup="finder(event)" list="dictionary"/> 
+        <div id="found_area"></div>
+      </section>
+      <section id="favorites_sec">
+        <span class="not_found">You don't have favorite words yet</span>
+        <div id="fav_container">
+        <h3 style="text-align: center;">Favorites words</h3>
+        <div class="filter" style="display: flex;flex-wrap: wrap;justify-content: space-around;align-items: center;"> 
+          <span> Type:</span>
+          <select name="" id="type_filter" onchange="filter(event)">
+            <option value="all">All</option>
+            <option value="noun">Nouns</option>
+            <option value="verb">Verbs</option>
+            <option value="adjective">Adjectives</option>
+            <option value="adverb">Adverbs</option>
+            <option value="preposition">Prepositions</option>
+            <option value="question">Questions</option>
+            <option value="conjuction">Conjunctions</option>
+            <option value="pronoun">Pronouns</option>
+            <option value="common">Common</option>
+          </select>
+        <span>status:</span>
+          <select name="" id="status_filter" onchange="filter(event)">
+            <option value="all">All</option>
+            <option value="not_learned">learn</option>
+            <option value="learned">Learned</option>
+          </select>
+          <span id="counterCont"><span id="counter">0</span> words</span>
+          <span  id="date" style="display: flex;flex-direction: column;justify-content: center;align-items: center;align-content: center;">Date <b id="date_arrow" onclick="changeDateArrange(this)">&#x2193;</b></span>
+        </div>
+        <div>
+          <!-- <div style="display: none;" id="caution_clear">Caution!, you will lose all you your favorite words
+            <div style="display: flex;justify-content: space-evenly;margin-top: 4%;"><button onclick="cancelAttempt()" id="cancel_clear">Cancel</button>
+            <button onclick="clearFavorites()" id="clearFav">Clear</button>
+            </div>
+          </div> -->
+        <ul id="favorites_list" style="list-style-type: none;display: flex;flex-direction: column;"></ul>
+      </div>
+        <button onclick="prepareReport()">Save your favorites into pdf or print a list</button>
+        <div id="print" style="display:none">
+        <table id="fav_table" style="margin-top:1%">
+            <tr>
+              <th>Ser</th>
+              <th>Type</th>
+              <th>English</th>
+              <th>German</th>
+              <th>PLural</th>
+            </tr>
+        </table>
+    </div>
+    </div>
+      </section>
+      <section id="exercises_sec">
+        <p class="not_found">You don't have favorite words to practice, add some</p>
+        <div id="exer_cont" style="display: none;">
+        <details  class="exercise">
+          <summary onclick="writeTrans(event)">Write</summary>
+          <div id="write_trans">
+          <div id="trans_result"></div>
+            <div class="exer_set">
+              <span id="sound_mic" class="mic"  onclick="soundControl(event)">&#128266;<i class="fa fa-volume-up" aria-hidden="true"></i></span>
+              <div>Translate into <select onchange="writeTrans()" class="choose_lang" id="trans_lang">
+                <option value="en">English </option>
+                <option value="de">German</option>
+              </select>
+            </div>
+            <div><input type="checkbox" id="learned_select"> <i>learned</i></div>
+            </div>
+            <p id="write_trans_question" class="question"></p>
+            <i id="question_type" style="display: block;margin-top: -12px;margin-bottom: 5%;font-size: 90%;"></i>
+            <div id="answer_area"></div>
+            <button id='reveal' onclick="revealAns(this)">?</button>
+            <div class="buttons_container">
+              <button id="check_bt" onclick="checkTrans(event)">Check</button>
+            </div>
+        </div>
+        </details>
+        <details id="select_trans" class="exercise">
+          <summary onclick="chooseTrans()">Choose</summary>
+          <span id="not_enough_words" class="not_enough">Add more than 10 word to your favorite list to play this game</span>
+          <div id="chooseTrans_cont" style="display: none;">
+          <div class="exer_set">
+            <span id="sound_mic" class="mic" onclick="soundControl(event)">&#128266;<i class="fa fa-volume-up" aria-hidden="true"></i></span>
+            <div>
+              <span>Translate into</span> <select onchange="chooseTrans()" class="choose_lang" id="chooseTrans_lang">
+                <option value="en">English </option>
+                <option value="de">German</option>
+              </select>
+              </div>
+              <div><input type="checkbox" id="choose_learned"> <i>learned</i></div>
+          </div>
+          <div id="choose_quest" class="question" > question </div>
+          <div class="choose_opt" onclick="checkChoose(event)">option</div>
+          <div class="choose_opt" onclick="checkChoose(event)">option</div>
+          <div class="choose_opt" onclick="checkChoose(event)">option</div>
+          <div class="choose_opt" onclick="checkChoose(event)">option</div>
+        </div>
+        </details>
+        <details id="choose_art" class="exercise">
+          <summary onclick="chooseArt()">Der, Die order Das?</summary>
+          <span class="not_enough" id="no_nouns"> You do not have enough nouns on your favorite list to play this game</span>
+          <div id="chooseArt_cont" style="display: none;">
+          <div class="exer_set">
+            <span id="sound_mic" class="mic" onclick="soundControl(event)">&#128266;<i class="fa fa-volume-up" aria-hidden="true"></i></span>
+            <div><input type="checkbox" id="art_learned"> <i>learned</i></div>
+          </div>
+          <div id="art_quest" class="question" > question </div>
+          <div id="arts_cont">
+            <div id="der_art" onclick="artChecker(event)" class="choose_opt">Der</div>
+            <div id="die_art" onclick="artChecker(event)" class="choose_opt">Die</div>
+            <div id="das_art" onclick="artChecker(event)" class="choose_opt">Das</div>
+          </div>
+        </div>
+        </div>
+        </details>
+      </div>
+      </section>
+    </main>
+    <footer>
+    <div>dictionary and word trainer</div>
+    </footer>
+  </sction>
+  <div id="data_list"></div>
+  <script src="data.js"></script>
+  <script src="Index.js"></script>
+</body>
+</html>
