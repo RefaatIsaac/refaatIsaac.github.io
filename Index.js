@@ -31,10 +31,10 @@ allArticles = document.getElementById("choose_art").querySelectorAll(".choose_op
 artLearned = document.getElementById("art_learned");
 
 
-// window.addEventListener("load",()=>{
-//   document.getElementById("loading_cont").remove();
-//   document.getElementById("super").style.display="block";
-//    });
+window.addEventListener("load",()=>{
+  document.getElementById("loading_cont").remove();
+  document.getElementById("super").style.display="block";
+});
 
 function displaySec(event){
   allSections.forEach(sec=>{
